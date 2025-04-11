@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100vh;
+}
+
+@layer base {
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+
+.card {
+  @apply w-80 h-[560px] rounded-2xl shadow-lg p-5 text-white text-center overflow-hidden relative cursor-pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-inner {
+  @apply relative w-full h-full text-center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  @apply absolute w-full h-full flex flex-col;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.pokemon-image-container {
+  @apply bg-white/10 rounded-xl p-3 mb-3;
+}
+
+.pokemon-image {
+  @apply w-40 h-40 object-contain mx-auto mb-2;
+}
+
+.pokemon-name {
+  @apply text-2xl font-bold;
+}
+
+.type-tag {
+  @apply px-2 py-1 rounded text-xs font-semibold capitalize;
+}
+
+.info-section {
+  @apply text-left bg-white/10 rounded-xl p-3 mb-3;
+}
+
+.section-title {
+  @apply text-lg font-semibold mb-2 text-center;
+}
+
+.ability-tag {
+  @apply px-2 py-1 bg-white/20 rounded text-xs capitalize;
+}
+
+.stat-container {
+  @apply flex flex-col;
+}
+
+.stat-header {
+  @apply flex justify-between mb-1;
+}
+
+.stat-name {
+  @apply text-sm text-white/80 capitalize;
+}
+
+.stat-value {
+  @apply text-sm font-medium;
+}
+
+.stat-bar-bg {
+  @apply w-full bg-gray-700 rounded-full h-2.5;
+}
+
+.card-flip-hint {
+  @apply mt-2 text-center text-sm text-white/70;
+}
+
+.new-pokemon-button {
+  @apply absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-white/10 text-white border-none rounded-lg px-4 py-2 cursor-pointer transition-colors duration-200 hover:bg-white/20 z-10;
+}
+
+/* Pokemon Type Classes */
+.type-normal {
+  @apply bg-gray-400;
+}
+.type-fire {
+  @apply bg-red-500;
+}
+.type-water {
+  @apply bg-blue-500;
+}
+.type-electric {
+  @apply bg-yellow-400;
+}
+.type-grass {
+  @apply bg-green-500;
+}
+.type-ice {
+  @apply bg-blue-200;
+}
+.type-fighting {
+  @apply bg-red-700;
+}
+.type-poison {
+  @apply bg-purple-500;
+}
+.type-ground {
+  @apply bg-yellow-600;
+}
+.type-flying {
+  @apply bg-indigo-300;
+}
+.type-psychic {
+  @apply bg-pink-500;
+}
+.type-bug {
+  @apply bg-green-400;
+}
+.type-rock {
+  @apply bg-yellow-700;
+}
+.type-ghost {
+  @apply bg-purple-700;
+}
+.type-dragon {
+  @apply bg-indigo-600;
+}
+.type-dark {
+  @apply bg-gray-700;
+}
+.type-steel {
+  @apply bg-gray-500;
+}
+.type-fairy {
+  @apply bg-pink-300;
+}
+
+/* Stat Bar Colors */
+.stat-hp {
+  @apply bg-red-700;
+}
+.stat-attack {
+  @apply bg-orange-700;
+}
+.stat-defense {
+  @apply bg-yellow-700;
+}
+.stat-special-attack {
+  @apply bg-blue-700;
+}
+.stat-special-defense {
+  @apply bg-green-700;
+}
+.stat-speed {
+  @apply bg-pink-700;
+}
+.stat-default {
+  @apply bg-gray-700;
+}
+
+/* Card Background Gradients */
+.card-default {
+  @apply bg-gradient-to-br from-blue-500 to-purple-700;
+}
+.card-normal {
+  @apply bg-gradient-to-br from-gray-400 to-gray-500;
+}
+.card-fire {
+  @apply bg-gradient-to-br from-red-500 to-yellow-500;
+}
+.card-water {
+  @apply bg-gradient-to-br from-blue-500 to-blue-700;
+}
+.card-electric {
+  @apply bg-gradient-to-br from-yellow-400 to-yellow-600;
+}
+.card-grass {
+  @apply bg-gradient-to-br from-green-500 to-green-700;
+}
+.card-ice {
+  @apply bg-gradient-to-br from-blue-200 to-blue-400;
+}
+.card-fighting {
+  @apply bg-gradient-to-br from-red-700 to-red-900;
+}
+.card-poison {
+  @apply bg-gradient-to-br from-purple-500 to-purple-800;
+}
+.card-ground {
+  @apply bg-gradient-to-br from-yellow-600 to-yellow-800;
+}
+.card-flying {
+  @apply bg-gradient-to-br from-indigo-300 to-blue-500;
+}
+.card-psychic {
+  @apply bg-gradient-to-br from-pink-500 to-pink-700;
+}
+.card-bug {
+  @apply bg-gradient-to-br from-green-400 to-green-600;
+}
+.card-rock {
+  @apply bg-gradient-to-br from-yellow-700 to-yellow-900;
+}
+.card-ghost {
+  @apply bg-gradient-to-br from-purple-700 to-purple-900;
+}
+.card-dragon {
+  @apply bg-gradient-to-br from-indigo-600 to-purple-800;
+}
+.card-dark {
+  @apply bg-gradient-to-br from-gray-700 to-gray-900;
+}
+.card-steel {
+  @apply bg-gradient-to-br from-gray-500 to-gray-700;
+}
+.card-fairy {
+  @apply bg-gradient-to-br from-pink-300 to-pink-500;
+}
+
+/* Secondary type influences (subtle) */
+.card-secondary-normal {
+  @apply bg-gradient-to-br;
+}
+.card-secondary-fire {
+  @apply to-yellow-500;
+}
+.card-secondary-water {
+  @apply to-blue-700;
+}
+.card-secondary-electric {
+  @apply to-yellow-600;
+}
+.card-secondary-grass {
+  @apply to-green-700;
+}
+.card-secondary-ice {
+  @apply to-blue-400;
+}
+.card-secondary-fighting {
+  @apply to-red-900;
+}
+.card-secondary-poison {
+  @apply to-purple-800;
+}
+.card-secondary-ground {
+  @apply to-yellow-800;
+}
+.card-secondary-flying {
+  @apply to-blue-500;
+}
+.card-secondary-psychic {
+  @apply to-pink-700;
+}
+.card-secondary-bug {
+  @apply to-green-600;
+}
+.card-secondary-rock {
+  @apply to-yellow-900;
+}
+.card-secondary-ghost {
+  @apply to-purple-900;
+}
+.card-secondary-dragon {
+  @apply to-purple-800;
+}
+.card-secondary-dark {
+  @apply to-gray-900;
+}
+.card-secondary-steel {
+  @apply to-gray-700;
+}
+.card-secondary-fairy {
+  @apply to-pink-500;
+}
